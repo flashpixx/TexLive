@@ -20,10 +20,10 @@ RUN /usr/glibc-compat/bin/localedef -i en_US -f UTF-8 en_US.UTF-8
 RUN go get -u github.com/tcnksm/ghr
 
 RUN mkdir -p /tmp/tex && curl -L http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz | tar xz --strip 1 -C /tmp/tex;
-ENV INSTALLATIONCONFIG selected_scheme scheme-$INSTALLATION\\nTEXDIR /usr/local/texlive/\\nTEXMFLOCAL /usr/local/texlive/texmf-local\\nTEXMFSYSCONFIG /usr/local/texlive/texmf-config\\nTEXMFSYSVAR /usr/local/texlive/texmf-var\\nTEXMFHOME ~/texmf\nTEXMFCONFIG ~/.texlive/texmf-config\\nTEXMFVAR ~/.texlive/texmf-var\\nbinary_x86_64-linux 1\\ninstopt_adjustpath 1\\ninstopt_adjustrepo 1\\ninstopt_letter 1\\ninstopt_portable 0\\ninstopt_write18_restricted 1\\ntlpdbopt_autobackup 1\\ntlpdbopt_backupdir tlpkg/backups\\ntlpdbopt_create_formats 1\\ntlpdbopt_desktop_integration 0\\ntlpdbopt_file_assocs 1\\ntlpdbopt_generate_updmap 0\\ntlpdbopt_install_docfiles 0\\ntlpdbopt_install_srcfiles 0\\ntlpdbopt_post_code 1\\ntlpdbopt_sys_bin /tmp\\ntlpdbopt_sys_info /tmp\\ntlpdbopt_sys_man /tmp\\ntlpdbopt_w32_multi_user 1\\n
+ENV INSTALLATIONCONFIG selected_scheme scheme-$INSTALLATION\\nTEXDIR /usr/local/texlive/\\nTEXMFLOCAL /usr/local/texlive/texmf-local\\nTEXMFSYSCONFIG /usr/local/texlive/texmf-config\\nTEXMFSYSVAR /usr/local/texlive/texmf-var\\nTEXMFHOME /root/texmf\nTEXMFCONFIG /root/.texlive/texmf-config\\nTEXMFVAR /root/.texlive/texmf-var\\nbinary_x86_64-linux 1\\ninstopt_adjustpath 1\\ninstopt_adjustrepo 1\\ninstopt_letter 1\\ninstopt_portable 0\\ninstopt_write18_restricted 1\\ntlpdbopt_autobackup 1\\ntlpdbopt_backupdir tlpkg/backups\\ntlpdbopt_create_formats 1\\ntlpdbopt_desktop_integration 0\\ntlpdbopt_file_assocs 1\\ntlpdbopt_generate_updmap 0\\ntlpdbopt_install_docfiles 0\\ntlpdbopt_install_srcfiles 0\\ntlpdbopt_post_code 1\\ntlpdbopt_sys_bin /tmp\\ntlpdbopt_sys_info /tmp\\ntlpdbopt_sys_man /tmp\\ntlpdbopt_w32_multi_user 1\\n
 RUN echo -e "$INSTALLATIONCONFIG" > /tmp/texinstall.profile; /tmp/tex/install-tl -profile /tmp/texinstall.profile;
 
-ENV PATH /usr/local/texlive/bin/x86_64-linux:~/go/bin:$PATH
+ENV PATH /usr/local/texlive/bin/x86_64-linux:/root/go/bin:$PATH
 RUN tlmgr update --self --all --reinstall-forcibly-removed
 
 RUN rm -rf /tmp/*
