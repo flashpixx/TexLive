@@ -1,5 +1,7 @@
 # TeX-Live Docker Container
 
+![Docker](https://img.shields.io/docker/build/flashpixx/texlive.svg)
+
 This container stores a complete installation of the LaTeX distribution with additional tools:
 
 * The container based on a [Alpine Linux 3.7](https://alpinelinux.org/)
