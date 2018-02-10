@@ -4,7 +4,7 @@
 
 This container stores a complete installation of the LaTeX distribution with additional tools:
 
-* The container based on a [Alpine Linux 3.7](https://alpinelinux.org/)
+* The container based on a [Alpine Linux Latest](https://hub.docker.com/_/alpine/)
 * It contains the current [TeX-Live](https://www.tug.org/texlive/) LaTeX distribution
 * [LaTeXMK](https://ctan.org/pkg/latexmk) configuration for building PDF with glossary and mpost
 * A Git Client with OpenSSH support, Curl, Wget, Perl, GnuPG and Go are included
