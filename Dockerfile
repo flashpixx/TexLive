@@ -8,7 +8,8 @@ ENV DOCKERIMAGE_INSTALLATIONSCHEME full
 # --- dependencies / installation section --------
 RUN apt-get update
 RUN apt-get -y upgrade
-RUN apt-get -y install golang-go
+RUN apt-get -y install golang-go git curl wget perl gnupg
+RUN apt-get autoremove -y
 RUN go get -u github.com/tcnksm/ghr
 
 RUN mkdir -p /tmp/tex && curl -L http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz | tar xz --strip 1 -C /tmp/tex;
