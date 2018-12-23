@@ -2,6 +2,14 @@
 
 ![Docker](https://img.shields.io/docker/build/flashpixx/texlive.svg)
 
+## Tags
+
+* ```latest``` full configurated LaTeX container 
+* ```tex``` completed LaTeX installation without configuration
+* ```base``` installed base toolchain
+
+## Description
+
 This container stores a complete installation of the LaTeX distribution with additional tools:
 
 * The container based on a [Ubuntu Linux Latest](https://hub.docker.com/_/ubuntu)
