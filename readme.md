@@ -1,5 +1,7 @@
 # TeX-Live Docker Container
 
+![Docker](https://img.shields.io/docker/build/flashpixx/texlive.svg)
+
 ## Tags
 
 * ```latest``` full configurated LaTeX container 
@@ -7,8 +9,6 @@
 * ```base``` installed base toolchain
 
 ## Description
-
-![Docker](https://img.shields.io/docker/build/flashpixx/texlive.svg)
 
 This container stores a complete installation of the LaTeX distribution with additional tools:
 
